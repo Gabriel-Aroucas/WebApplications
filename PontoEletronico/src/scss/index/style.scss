@@ -1,0 +1,74 @@
+@import '../config/variables';
+@import '../config/mixins';
+
+body {
+    @include flex();
+    min-height: 100vh;
+    background-color: $bg-color;
+}
+.component{
+    display: block
+}
+.container {
+    .content {
+        @include flex();
+        flex-direction: column;
+        padding: 2rem;
+        background-color: $contentbox-color;
+        color: $text-color;
+
+        .user {
+            margin: 1rem 0;
+            i {
+                font-size: 5rem;
+                padding: 1rem;
+                border-radius: 50%;
+                width: 85px;
+                height: 85px;
+                text-align: center;
+                box-shadow: rgb(143, 141, 141) 2px 6px 12px;
+            }
+        }
+
+        .title {
+            text-align: center;
+            font-size: 10px;
+            font-family: jetbrains mono;
+        }
+
+        .inputs {
+            @include flex();
+            flex-direction: column;
+
+            fieldset {
+                margin: 0.3rem;
+                font-family: poppins;
+            }
+
+            input {
+                margin: 0.3rem;
+                border: none;
+                background-color: $contentbox-color;
+            }
+
+            input:focus {
+                outline: none;
+            }
+        }
+
+        .buttons {
+            button {
+                padding: 1rem 5rem;
+                border: none;
+                font-family: jetbrains mono;
+                margin: 1rem 0;
+                color: $contentbox-color;
+                background-color: $buttonsAndSpans-color;
+            }button:hover{
+                background-color: $bg-color;
+                color: $text-color;
+            }
+        }
+
+    }
+}
