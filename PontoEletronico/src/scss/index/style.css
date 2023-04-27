@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 body {
   display: flex;
   justify-content: center;
@@ -8,7 +9,60 @@ body {
   background-color: hsl(225, 10%, 94%);
 }
 
-.container .content {
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .component {
+  position: absolute;
+  width: 80vw;
+  background-color: hsl(223, 47%, 23%);
+  color: hsl(225, 100%, 98%);
+  text-align: center;
+  padding: 3rem;
+}
+main .component .src .closeModal {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  margin: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+main .component img {
+  width: 150px;
+  filter: invert(100%);
+  margin: 0 auto;
+}
+main .component .content .divTitle {
+  text-align: center;
+}
+main .component .content .divTitle h1 {
+  margin-top: -20px;
+  font-size: 4rem;
+  font-family: bebas neue;
+}
+main .component .content .divDescription {
+  text-align: center;
+}
+main .component .content .divDescription p {
+  margin-top: -50px;
+  font-family: jetBrains mono;
+}
+main .component .content .btnModal {
+  padding: 1rem 3rem;
+  background-color: hsl(225, 100%, 98%);
+  color: hsl(223, 47%, 23%);
+  border: none;
+  margin: 0.3rem;
+  cursor: pointer;
+}
+main .component .content .btnModal:hover {
+  background-color: hsl(224, 23%, 55%);
+  color: hsl(225, 100%, 98%);
+}
+main .container .content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,42 +71,41 @@ body {
   background-color: hsl(225, 100%, 98%);
   color: hsl(223, 47%, 23%);
 }
-.container .content .user {
+main .container .content .user {
   margin: 1rem 0;
 }
-.container .content .user i {
+main .container .content .user i {
   font-size: 5rem;
   padding: 1rem;
   border-radius: 50%;
   width: 85px;
   height: 85px;
   text-align: center;
-  box-shadow: rgb(143, 141, 141) 2px 6px 12px;
 }
-.container .content .title {
+main .container .content .title {
   text-align: center;
   font-size: 10px;
   font-family: jetbrains mono;
 }
-.container .content .inputs {
+main .container .content .inputs {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.container .content .inputs fieldset {
+main .container .content .inputs fieldset {
   margin: 0.3rem;
   font-family: poppins;
 }
-.container .content .inputs input {
+main .container .content .inputs input {
   margin: 0.3rem;
   border: none;
   background-color: hsl(225, 100%, 98%);
 }
-.container .content .inputs input:focus {
+main .container .content .inputs input:focus {
   outline: none;
 }
-.container .content .buttons button {
+main .container .content .buttons button {
   padding: 1rem 5rem;
   border: none;
   font-family: jetbrains mono;
@@ -60,7 +113,7 @@ body {
   color: hsl(225, 100%, 98%);
   background-color: hsl(255, 75%, 52%);
 }
-.container .content .buttons button:hover {
+main .container .content .buttons button:hover {
   background-color: hsl(225, 10%, 94%);
   color: hsl(223, 47%, 23%);
 }/*# sourceMappingURL=style.css.map */

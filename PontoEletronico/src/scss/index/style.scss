@@ -6,9 +6,61 @@ body {
     min-height: 100vh;
     background-color: $bg-color;
 }
-.component{
-    display: block
-}
+main{
+        @include flex();
+    .component{
+        position: absolute;
+        width: 80vw;
+        background-color:$text-color;
+        color: $contentbox-color;
+        text-align: center;
+        padding: 3rem;
+        .src{
+            
+            .closeModal{
+                position: absolute;
+                right: 10px;
+                top: 0;
+                margin: 1rem;
+                font-size: 2rem;
+                cursor: pointer;
+            }
+        }
+        img{
+            width:150px;
+            filter: invert(100%);
+            margin: 0 auto;
+        }
+        .content{
+            .divTitle{
+                text-align: center;
+
+                h1{
+                    margin-top: -20px;
+                    font-size: 4rem;
+                    font-family: bebas neue;
+                }
+            }
+            .divDescription{
+                text-align: center;
+                p{
+                    margin-top: -50px;
+                    font-family: jetBrains mono
+                }
+            }
+            .btnModal{
+                padding: 1rem 3rem;
+                background-color: $contentbox-color;
+                color: $text-color;
+                border: none;
+                margin: 0.3rem;
+                cursor:pointer;
+            }.btnModal:hover{
+                background-color: $terciary-color;
+                color: $contentbox-color;
+            }
+        }
+    }
 .container {
     .content {
         @include flex();
@@ -26,7 +78,6 @@ body {
                 width: 85px;
                 height: 85px;
                 text-align: center;
-                box-shadow: rgb(143, 141, 141) 2px 6px 12px;
             }
         }
 
@@ -71,4 +122,5 @@ body {
         }
 
     }
+}
 }
