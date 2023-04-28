@@ -5,7 +5,7 @@ export function modal(texth1, textp) {
     const src = document.createElement('div');
     const img = document.createElement('img');
     const content = document.createElement('section');
-    const title = document.createElement('div');
+    const title = document.createElement('div');    
     const h1 = document.createElement('h1');
     const description = document.createElement('div');
     const p = document.createElement('p');

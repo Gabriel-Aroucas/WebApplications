@@ -1,4 +1,4 @@
-//import {modal} from "../components/modal.js";
+import { modal } from "../components/modal.js";
 
 setInterval(() => {
     let data = new Date();

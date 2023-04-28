@@ -8,11 +8,10 @@
   box-sizing: border-box;
 }
 
-body,
-html {
+body {
   background-color: hsl(225, 10%, 94%);
-  min-width: -moz-max-content;
-  min-width: max-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 
 header {
@@ -60,6 +59,58 @@ header .user i {
   color: hsl(223, 47%, 23%);
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .component {
+  position: absolute;
+  width: 80vw;
+  background-color: hsl(223, 47%, 23%);
+  color: hsl(225, 100%, 98%);
+  text-align: center;
+  padding: 3.7rem;
+}
+main .component .src .closeModal {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  margin: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+main .component img {
+  width: 150px;
+  filter: invert(100%);
+  margin: 0 auto;
+}
+main .component .content .divTitle {
+  text-align: center;
+}
+main .component .content .divTitle h1 {
+  font-size: 4rem;
+  font-family: bebas neue;
+}
+main .component .content .divDescription {
+  text-align: center;
+}
+main .component .content .divDescription p {
+  font-family: jetBrains mono;
+}
+main .component .content .btnModal {
+  padding: 1rem 3rem;
+  background-color: hsl(225, 100%, 98%);
+  color: hsl(223, 47%, 23%);
+  border: none;
+  margin: 2rem 0;
+  cursor: pointer;
+}
+main .component .content .btnModal:hover {
+  background-color: hsl(224, 23%, 55%);
+  color: hsl(225, 100%, 98%);
+}
 main .counter {
   margin: 3rem 0;
   font-family: outfit;
@@ -92,4 +143,11 @@ main .buttons button {
 }
 main .buttons button:hover {
   background-color: hsl(224, 23%, 55%);
+}
+
+@media only screen and (max-width: 700px) {
+  main .component {
+    min-width: -moz-max-content;
+    min-width: max-content;
+  }
 }/*# sourceMappingURL=style.css.map */
