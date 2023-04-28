@@ -84,6 +84,7 @@ main{
         .title {
             text-align: center;
             font-size: 10px;
+            width: 70%;
             font-family: jetbrains mono;
         }
 
@@ -118,6 +119,8 @@ main{
             }button:hover{
                 background-color: $bg-color;
                 color: $text-color;
+            }button:active{
+                border: 1px solid $terciary-color;
             }
         }
 

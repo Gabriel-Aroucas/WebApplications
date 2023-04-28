@@ -1,1 +1,95 @@
-/*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: hsl(225, 10%, 94%);
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(225, 100%, 98%);
+}
+header .user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .user p {
+  margin-right: 10px;
+}
+header .user i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.navbar {
+  background-color: hsl(223, 47%, 23%);
+  color: hsl(225, 100%, 98%);
+}
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.navbar ul li {
+  list-style: none;
+  margin: 0 1rem;
+  padding: 1rem;
+  font-size: 15px;
+  font-family: outfit;
+  font-weight: bold;
+  transition: 1s;
+  cursor: pointer;
+}
+.navbar ul li:hover {
+  background-color: hsl(225, 100%, 98%);
+  color: hsl(223, 47%, 23%);
+}
+
+main .counter {
+  margin: 3rem 0;
+  font-family: outfit;
+  font-weight: bold;
+}
+main .counter p {
+  text-align: center;
+}
+main .counter .date,
+main .counter .clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .counter .date p,
+main .counter .clock p {
+  font-size: 9rem;
+}
+main .counter .date p {
+  font-size: 4rem;
+}
+main .buttons {
+  text-align: center;
+}
+main .buttons button {
+  padding: 1rem;
+  border: none;
+  background-color: hsl(223, 47%, 23%);
+  color: hsl(225, 100%, 98%);
+}
+main .buttons button:hover {
+  background-color: hsl(224, 23%, 55%);
+}/*# sourceMappingURL=style.css.map */

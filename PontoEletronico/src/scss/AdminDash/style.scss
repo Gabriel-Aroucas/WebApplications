@@ -1,0 +1,98 @@
+@import '../config/variables';
+@import '../config/mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    background-color: $bg-color;
+    min-width: max-content;
+}
+
+header {
+    @include flex();
+    justify-content: space-between;
+    background-color: $contentbox-color;
+
+    .user {
+        @include flex();
+
+        p {
+            margin-right: 10px;
+        }
+
+        i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+    }
+}
+
+.navbar {
+    background-color: $text-color;
+    color: $contentbox-color;
+
+    ul {
+        @include flex;
+        justify-content: flex-start;
+
+        li {
+            list-style: none;
+            margin: 0 1rem;
+            padding: 1rem;
+            font-size: 15px;
+            font-family: outfit;
+            font-weight: bold;
+            transition: 1s;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: $contentbox-color;
+            color: $text-color;
+        }
+    }
+}
+
+main {
+    .counter {
+        margin: 3rem 0;
+        font-family: outfit;
+        font-weight: bold;
+
+        p {
+            text-align: center
+        }
+
+        .date,
+        .clock {
+            @include flex;
+
+            p {
+                font-size: 9rem;
+            }
+        }
+
+        .date {
+            p {
+                font-size: 4rem;
+            }
+        }
+    }
+
+    .buttons {
+        text-align: center;
+        button {
+            padding: 1rem;
+            border: none;
+            background-color: $text-color;
+            color: $contentbox-color;
+        }button:hover{
+            background-color: $terciary-color;
+        }
+    }
+}
