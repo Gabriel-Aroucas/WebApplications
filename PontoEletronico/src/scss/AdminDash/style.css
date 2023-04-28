@@ -145,6 +145,20 @@ main .buttons button:hover {
   background-color: hsl(224, 23%, 55%);
 }
 
+.historic {
+  opacity: 0;
+}
+.historic table {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  font-size: 2.5rem;
+  font-family: outfit;
+  font-weight: bold;
+  text-align: center;
+  background-color: hsl(225, 100%, 98%);
+}
+
 @media only screen and (max-width: 700px) {
   main .component {
     min-width: -moz-max-content;

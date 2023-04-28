@@ -1,4 +1,7 @@
 import { modal } from "../components/modal.js";
+let data = new Date();
+let parOuImpar = '';
+let entradaEsaida = 0;
 
 setInterval(() => {
     let data = new Date();
@@ -30,6 +33,29 @@ setInterval(() => {
 
 $("#pointerRegister").on({
     click:()=>{
-        modal('Ponto Registrado','Você pode acompanhar na seção Histórico')
+        modal('Ponto Registrado','Você pode acompanhar na seção Histórico');
+         entradaEsaida++;
+         if(entradaEsaida%2 != 0){
+            //entrada
+            parOuImpar='par';
+         }else{
+            //saida
+            parOuImpar='imapar';
+         }
     }
 })
+
+$(".item1").on({
+   click:()=>{
+      $("#main").css('opacity','0');
+      $(".historic").css('opacity','1');
+   }
+})
+$(".headerBrand").on({
+   click:()=>{
+      $("#main").css('opacity','1');
+      $(".historic").css('opacity','0');
+   }
+})
+
+//headerBrand
