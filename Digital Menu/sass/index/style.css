@@ -1,0 +1,297 @@
+/*
+$bg-color:#1c1c1c;
+$destac-color:hsl(30, 70%, 50%);
+$efect-color:hsl(62, 70%, 50%);
+$text-color:aliceblue;
+$util-color:hsl(53, 70%, 69%);
+$damage:hsl(0, 70%, 30%);
+//$text-color:#FFEE63;
+*/
+/*
+$primary-color:#523906;
+$secondary-color: #535204;
+$terciary-color: #CDB30C;
+$fourth-color: aliceblue;
+*/
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gruppo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap");
+@import '/node_modules/animate.css/animate.css';
+body {
+  background-image: url("https://portalconstrucaofacil.com/wp-content/uploads/2019/11/Lenha-para-forno-e1574894896718.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-backdrop-filter: brightness(20%);
+          backdrop-filter: brightness(20%);
+  min-height: 100vh;
+}
+
+.header {
+  animation: bounce;
+  animation-duration: 1s;
+  display: flex;
+  color: rgb(248, 248, 248);
+  font-family: Bebas Neue;
+}
+.header .headerTitle {
+  width: 100%;
+}
+.header .headerTitle h3 {
+  background-color: rgb(141, 24, 24);
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+.header .cart-icon i {
+  font-size: 1.2rem;
+  position: absolute;
+  left: 93%;
+  cursor: pointer;
+}
+
+.main {
+  display: none;
+  font-size: 1.2rem;
+  position: fixed;
+  z-index: 3;
+  width: 50%;
+  transform: translateX(100%);
+  top: 0;
+}
+.main .title {
+  font-size: 1.5rem;
+  font-family: bebas neue;
+  margin: 1rem 0;
+  color: rgb(248, 248, 248);
+  display: flex;
+  justify-content: space-between;
+}
+.main .title span {
+  margin: 0 1rem;
+}
+.main .title span:nth-child(1) {
+  opacity: 0;
+}
+.main .title span:nth-child(2) {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.main .container {
+  width: 100%;
+  text-align: center;
+  float: right;
+  background-color: #535204;
+  border-radius: 0px 0px 0px 10px;
+}
+.main .container #content {
+  color: #CDB30C;
+  font-family: poppins;
+  font-weight: 600;
+}
+.main .container #content td {
+  width: 100vw;
+}
+.main .container #removeToCart {
+  padding: 0.1rem 0.7rem;
+  margin: 0 1rem;
+  background-color: tomato;
+}
+.main .container #finalValue {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(248, 248, 248);
+}
+.main .container button {
+  padding: 0.5rem;
+  background-color: #CDB30C;
+  color: rgb(248, 248, 248);
+  font-family: poppins;
+  font-weight: 600;
+  border: none;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+}
+.main .container button:hover {
+  background-color: rgb(248, 248, 248);
+  color: #CDB30C;
+}
+
+.description p:nth-child(4) {
+  margin: 20px 0;
+}
+.description p:nth-child(3) {
+  transform: translateY(100%);
+}
+
+.logo {
+  text-align: center;
+}
+.logo img {
+  border-radius: 50%;
+  border: 5px solid rgb(141, 24, 24);
+  filter: brightness(85%);
+}
+
+.title,
+.buttons {
+  text-align: center;
+  color: rgb(248, 248, 248);
+}
+.title h1,
+.buttons h1 {
+  font-size: 2rem;
+  font-family: "Koulen", cursive;
+  font-style: oblique;
+}
+.title span,
+.buttons span {
+  font-size: 1rem;
+  font-family: Montserrat;
+  font-weight: 600;
+}
+
+.buttons {
+  margin: 3vw auto;
+  width: 100vw;
+  color: rgb(248, 248, 248);
+  font-family: poppins;
+  font-weight: 600;
+  font-size: calc(2rem + 1vw);
+}
+
+.hamburguers,
+.events,
+.reservas,
+.combos {
+  background-color: #535204;
+  margin: 1.5vw;
+  width: 80%;
+  cursor: pointer;
+}
+
+.events,
+.combos {
+  border-radius: 8px 0px 0px 8px;
+  background: rgb(141, 24, 24);
+  margin-left: 100%;
+  transform: translate(-100%);
+}
+
+.hamburguers,
+.reservas {
+  margin: 0;
+  background: rgb(141, 24, 24);
+  border-radius: 0px 8px 8px 0px;
+}
+
+.hamburguers:hover,
+.events:hover,
+.reservas:hover,
+.combos:hover {
+  background-color: rgb(248, 248, 248);
+  color: rgb(141, 24, 24);
+  transition: 0.7s;
+}
+
+.footer {
+  position: fixed;
+  bottom: 4rem;
+  display: flex;
+  color: rgb(248, 248, 248);
+  width: 100%;
+  justify-content: space-between;
+}
+.footer .socialMedia {
+  font-size: 2.5rem;
+}
+.footer .help {
+  text-align: center;
+}
+
+#modalError {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+#modalError #ty {
+  position: absolute;
+  top: 5vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  background-color: rgb(141, 24, 24);
+  margin: auto;
+  text-align: center;
+  display: none;
+}
+#modalError #ty img {
+  border-radius: 50%;
+  border: 5px solid rgb(248, 248, 248);
+}
+#modalError #ty h1 {
+  font-size: 5rem;
+  color: rgb(248, 248, 248);
+  font-family: bebas neue;
+}
+#modalError #ty p {
+  font-size: 2rem;
+  color: rgb(248, 248, 248);
+  font-family: poppins;
+}
+#modalError #ty button {
+  padding: 1vw 3vw;
+  font-family: poppins;
+  margin: 1vw 0;
+  border: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .footer {
+    display: block;
+    text-align: center;
+  }
+  .footer .socialMedia {
+    font-size: 1rem;
+  }
+  .footer .help {
+    display: none;
+  }
+  .footer .credits {
+    font-size: 0.8rem;
+  }
+  #modalError {
+    height: 200vw;
+  }
+  #modalError #ty {
+    width: 100%;
+  }
+  #modalError #ty h1 {
+    font-size: 3rem;
+  }
+  #modalError #ty p {
+    font-size: 1.5rem;
+  }
+  #modalError #ty button {
+    padding: 0.5rem 3rem;
+    margin: 2rem 0;
+  }
+}
+@media only screen and (max-width: 200px) {
+  .footer {
+    display: none;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .cartOpen {
+    transform: translateX(0%);
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */

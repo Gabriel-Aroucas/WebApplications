@@ -1,0 +1,90 @@
+@import '../config/_variables.scss';
+@import '../config/fonts.scss';
+
+body{
+    background-image: url('https://portalconstrucaofacil.com/wp-content/uploads/2019/11/Lenha-para-forno-e1574894896718.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+.background{
+    min-width: 100vw;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    backdrop-filter: brightness(20%);
+}
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    animation: bounce;
+    animation-duration: 1s;
+    display: flex;
+    color: $fourth-color;
+    font-family: Bebas Neue;
+
+    .headerTitle {
+        width: 100%;
+        
+        h3 {
+            background-color: $mainColor;
+            padding: 1vw;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+    .goBack{
+        a{
+            font-size: 2rem;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+    }
+
+}
+main{
+    margin: 5rem 0;
+    text-align: center;
+    h1{
+        font-size: 5rem;
+        font-family: bebas neue;
+        color: $fourth-color;
+    }
+    img{
+        border-radius: 50%;
+        border: 10px solid $fourth-color;
+    }
+    .text{
+        color: $fourth-color;
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        text-shadow: black 5px 5px 10px;
+        font-family: outfit;
+        a{
+            color: $terciary-color;
+        }
+    }
+}
+@media only screen and (max-width:600px){
+    .header{
+        .headerTitle{
+            h3{
+                padding: 1rem;
+            }
+        }
+    }
+
+    main{
+        h1{
+            font-size: 1.8rem;
+        }
+        img{
+            width: 200px;
+        }
+    }
+}

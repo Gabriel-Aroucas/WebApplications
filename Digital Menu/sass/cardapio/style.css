@@ -1,0 +1,613 @@
+/*
+$bg-color:#1c1c1c;
+$destac-color:hsl(30, 70%, 50%);
+$efect-color:hsl(62, 70%, 50%);
+$text-color:aliceblue;
+$util-color:hsl(53, 70%, 69%);
+$damage:hsl(0, 70%, 30%);
+//$text-color:#FFEE63;
+*/
+/*
+$primary-color:#523906;
+$secondary-color: #535204;
+$terciary-color: #CDB30C;
+$fourth-color: aliceblue;
+*/
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gruppo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.backdropfilter {
+  position: fixed;
+  z-index: -1;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-image: url("https://portalconstrucaofacil.com/wp-content/uploads/2019/11/Lenha-para-forno-e1574894896718.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  filter: brightness(20%);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  animation: bounce;
+  animation-duration: 1s;
+  display: flex;
+  color: rgb(248, 248, 248);
+  font-family: Bebas Neue;
+  z-index: 2;
+}
+.header i {
+  position: absolute;
+  font-size: 2rem;
+  left: 1vw;
+  top: 0.5vw;
+  color: rgb(248, 248, 248);
+  cursor: pointer;
+  z-index: 3;
+}
+.header .ballonInfo {
+  position: absolute;
+  right: 70px;
+  top: 100px;
+}
+.header .ballonInfo i {
+  position: absolute;
+}
+.header .headerTitle {
+  width: 100%;
+}
+.header .headerTitle h3 {
+  background-color: rgb(141, 24, 24);
+  padding: 1vw;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.header .headerTitle .info {
+  position: fixed;
+  width: 100%;
+  text-align: start;
+  background-color: rgb(248, 248, 248);
+  color: rgb(141, 24, 24);
+  font-family: outfit;
+  font-style: oblique;
+  font-size: 15px;
+}
+.header .headerTitle .info h1 {
+  margin: 0 80px;
+}
+.header .headerTitle .info .navbar {
+  display: none;
+  background-color: rgb(141, 24, 24);
+  padding: 0.6rem;
+  text-align: center;
+}
+.header .headerTitle .info .navbar span {
+  color: rgb(248, 248, 248);
+  padding: 0.2rem;
+}
+.header .headerTitle .info .navbar span:hover {
+  color: #CDB30C;
+}
+.header .headerTitle .info .navbar p {
+  color: rgb(248, 248, 248);
+}
+.header .cart-icon {
+  position: absolute;
+  width: 10%;
+  height: 5vh;
+  right: 1rem;
+}
+.header .cart-icon i {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.header .cart-icon i span {
+  opacity: 0;
+  background-color: rgb(248, 248, 248);
+  color: rgb(141, 24, 24);
+  padding: 0.2rem 0.5rem;
+  border-radius: 50%;
+}
+
+.component #modalError {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vw;
+  display: none;
+  z-index: 10;
+}
+.component #modalError #ty {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  background-color: rgb(141, 24, 24);
+  margin: auto;
+  text-align: center;
+  display: none;
+  padding: 1.5rem;
+  border: 11px solid alice;
+}
+.component #modalError #ty img {
+  border-radius: 50%;
+  border: 5px solid rgb(248, 248, 248);
+}
+.component #modalError #ty h1 {
+  font-size: 5rem;
+  color: rgb(248, 248, 248);
+  font-family: bebas neue;
+}
+.component #modalError #ty p {
+  font-size: 2rem;
+  color: rgb(248, 248, 248);
+  font-family: poppins;
+}
+.component #modalError #ty button {
+  padding: 1rem 3rem;
+  font-family: poppins;
+  margin: 1vw 0;
+  border: none;
+}
+
+.confirmationModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: none;
+  font-family: outfit;
+  text-align: center;
+  min-height: 100vh;
+  z-index: 5;
+}
+.confirmationModal #closeConfirmationModal {
+  color: rgb(141, 24, 24);
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.confirmationModal .box {
+  background-color: rgb(248, 248, 248);
+  max-width: 400px;
+  padding: 1rem;
+  font-family: "Carrois Gothic SC", sans-serif;
+  text-transform: lowercase;
+}
+.confirmationModal .box .title {
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: rgb(141, 24, 24);
+  font-weight: bold;
+  font-family: bebas neue;
+}
+.confirmationModal .box .clientName {
+  margin: 1rem 0;
+}
+.confirmationModal .box .clientName h1 {
+  color: #252222;
+  font-size: 1.2rem;
+}
+.confirmationModal .box .clientName #clientName {
+  width: 50%;
+  background-color: rgb(248, 248, 248);
+  color: rgb(49, 48, 48);
+  text-align: center;
+  border-color: rgb(141, 24, 24);
+  margin: 0.3rem;
+  border: none;
+  border-bottom: 1px solid rgba(66, 63, 63, 0.3294117647);
+  font-family: "Carrois Gothic SC", sans-serif;
+}
+.confirmationModal .box .clientName ::-moz-placeholder {
+  color: rgba(66, 63, 63, 0.3294117647);
+}
+.confirmationModal .box .clientName ::placeholder {
+  color: rgba(66, 63, 63, 0.3294117647);
+}
+.confirmationModal .box .paymentMode {
+  margin: 1rem 0;
+}
+.confirmationModal .box .paymentMode h1 {
+  font-size: 1.2rem;
+  margin: 0.3rem;
+  color: #252222;
+}
+.confirmationModal .box .paymentMode select {
+  width: 50%;
+  text-align: center;
+  background-color: rgb(248, 248, 248);
+  color: #252222;
+  font-family: outfit;
+  border: none;
+  border-bottom: 1px solid rgba(66, 63, 63, 0.3294117647);
+}
+.confirmationModal .box .adressInformation {
+  margin: 1rem 0;
+}
+.confirmationModal .box .adressInformation .adress {
+  display: flex;
+}
+.confirmationModal .box .adressInformation .adress #number {
+  width: 20%;
+  background-color: rgb(248, 248, 248);
+  color: #252222;
+  border: none;
+  border-bottom: 1px solid rgba(66, 63, 63, 0.3294117647);
+}
+.confirmationModal .box .adressInformation .adress #adress {
+  width: 80%;
+  text-align: center;
+  background-color: rgb(248, 248, 248);
+  color: #252222;
+  border: none;
+  border-bottom: 1px solid rgba(66, 63, 63, 0.3294117647);
+  border-right: 1px solid rgba(66, 63, 63, 0.3294117647);
+}
+.confirmationModal .box .adressInformation .adress ::-moz-placeholder {
+  color: rgba(66, 63, 63, 0.3294117647);
+}
+.confirmationModal .box .adressInformation .adress ::placeholder {
+  color: rgba(66, 63, 63, 0.3294117647);
+}
+.confirmationModal .box .sauceTipes {
+  margin: 1rem 0;
+}
+.confirmationModal .box .order {
+  margin: 1rem 0;
+}
+.confirmationModal .box .order button {
+  width: 50%;
+  padding: 0.5rem 0;
+  background-color: rgb(141, 24, 24);
+  color: rgb(248, 248, 248);
+  font-family: outfit;
+  border: none;
+  margin: auto;
+  margin-top: -10px;
+}
+.confirmationModal .box .order button:hover {
+  background-color: rgb(171, 24, 24);
+  color: rgb(248, 248, 248);
+}
+
+.additionalInformation {
+  margin: 2rem 0;
+}
+.additionalInformation textarea {
+  background-color: rgb(248, 248, 248);
+  text-align: center;
+  color: #000;
+  font-family: outfit;
+}
+.additionalInformation ::-moz-placeholder {
+  color: rgba(66, 63, 63, 0.3294117647);
+}
+.additionalInformation ::placeholder {
+  color: rgba(66, 63, 63, 0.3294117647);
+}
+
+.exchangedMoney {
+  margin: 2rem 0;
+}
+.exchangedMoney #exchanged {
+  text-align: center;
+  background-color: rgb(248, 248, 248);
+  color: #252222;
+  border: none;
+  border-bottom: 1px solid rgba(66, 63, 63, 0.3294117647);
+}
+.exchangedMoney ::-moz-placeholder {
+  color: rgba(66, 63, 63, 0.3294117647);
+  font-style: oblique;
+}
+.exchangedMoney ::placeholder {
+  color: rgba(66, 63, 63, 0.3294117647);
+  font-style: oblique;
+}
+.exchangedMoney .informative i {
+  font-size: 10px;
+  color: rgb(141, 24, 24);
+}
+
+.subMain .produto {
+  margin: 1rem 0;
+}
+.subMain .produto b {
+  font-family: outfit;
+}
+.subMain span {
+  font-family: outfit;
+  font-style: oblique;
+}
+
+main,
+.subMain,
+.unSubMain {
+  position: relative;
+  padding: 6rem 1rem;
+  width: 50%;
+}
+main .subMainTitle,
+main .unSubMainTitle,
+.subMain .subMainTitle,
+.subMain .unSubMainTitle,
+.unSubMain .subMainTitle,
+.unSubMain .unSubMainTitle {
+  background-color: rgb(141, 24, 24);
+  text-align: center;
+  border-radius: 4px;
+  padding: 0.2rem;
+}
+main .subMainTitle h1,
+main .unSubMainTitle h1,
+.subMain .subMainTitle h1,
+.subMain .unSubMainTitle h1,
+.unSubMain .subMainTitle h1,
+.unSubMain .unSubMainTitle h1 {
+  color: rgb(248, 248, 248);
+  font-size: 2rem;
+  font-family: bebas neue;
+  font-style: oblique;
+}
+main .produto,
+.subMain .produto,
+.unSubMain .produto {
+  width: 100%;
+  color: rgb(248, 248, 248);
+  margin: 1rem 0;
+}
+main .produto span,
+main .produto i,
+.subMain .produto span,
+.subMain .produto i,
+.unSubMain .produto span,
+.unSubMain .produto i {
+  color: #CDB30C;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+main .produto h1,
+.subMain .produto h1,
+.unSubMain .produto h1 {
+  font-family: bebas neue;
+  font-size: 2.5rem;
+}
+main .produto p,
+.subMain .produto p,
+.unSubMain .produto p {
+  font-family: outfit;
+  font-size: 1rem;
+}
+main .produto p span,
+.subMain .produto p span,
+.unSubMain .produto p span {
+  font-family: outfit;
+}
+main .combo,
+.subMain .combo,
+.unSubMain .combo {
+  display: flex;
+  font-style: oblique;
+  font-family: outfit;
+}
+main .combo span,
+.subMain .combo span,
+.unSubMain .combo span {
+  font-style: normal;
+  margin: 0 0.5vw;
+}
+
+.unSubMain {
+  width: 97%;
+}
+.unSubMain .unSubMainTitle {
+  margin-top: -5rem;
+}
+
+.cartOpen {
+  display: none;
+  font-size: 1.2rem;
+  position: fixed;
+  width: 50%;
+  transform: translateX(100%);
+  top: 0;
+  z-index: 2;
+}
+.cartOpen .title {
+  font-size: 2.5rem;
+  font-family: bebas neue;
+  margin: 1rem 0;
+  color: rgb(248, 248, 248);
+  text-shadow: rgba(66, 63, 63, 0.3294117647) 3px 3px 4px;
+  display: flex;
+  justify-content: space-between;
+}
+.cartOpen .title span {
+  margin: 0 1rem;
+}
+.cartOpen .title span:nth-child(1) {
+  opacity: 0;
+}
+.cartOpen .title span:nth-child(2) {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.cartOpen .container {
+  width: 100%;
+  text-align: center;
+  float: right;
+  background-color: #252222;
+  border-radius: 0px 0px 0px 10px;
+}
+.cartOpen .container #content {
+  color: rgb(248, 248, 248);
+  font-weight: 600;
+  font-family: "Carrois Gothic SC", sans-serif;
+}
+.cartOpen .container #content td {
+  width: 100vw;
+}
+.cartOpen .container #removeToCart {
+  font-size: 15px;
+  padding: 0.1rem 0.5rem;
+  margin: 0 1rem;
+  color: rgb(210, 208, 208);
+  background-color: transparent;
+}
+.cartOpen .container #removeToCart:hover {
+  border: 0.1px solid rgb(248, 248, 248);
+}
+.cartOpen .container #finalValue {
+  font-family: "Carrois Gothic SC", sans-serif;
+  color: rgb(248, 248, 248);
+}
+.cartOpen .container button {
+  padding: 0.5rem;
+  background-color: rgb(141, 24, 24);
+  color: rgb(248, 248, 248);
+  font-family: outfit;
+  font-weight: 600;
+  border: none;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  transition: 1s;
+}
+.cartOpen .container button:hover {
+  background-color: rgb(248, 248, 248);
+  color: rgb(141, 24, 24);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  color: #CDB30C;
+  width: 100%;
+  justify-content: space-between;
+}
+.footer .socialMedia {
+  font-size: 2.5rem;
+}
+.footer .help {
+  text-align: center;
+}
+
+.subMain {
+  width: 50%;
+  border-left: 1px solid white;
+}
+
+@media only screen and (max-width: 500px) {
+  .cartOpen {
+    transform: translateX(0%);
+    width: 100%;
+  }
+  .confirmationModal {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(248, 248, 248);
+  }
+  .confirmationModal .title {
+    text-align: center;
+  }
+  .confirmationModal .box {
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+  }
+  body {
+    display: block;
+  }
+  main {
+    width: 80%;
+    margin-top: -1.5rem;
+  }
+  main .produto {
+    margin: 2.5rem 0;
+  }
+  .subMain .produto {
+    margin-top: 0rem;
+  }
+  .subMain .unSubMain .produto {
+    margin-top: 1rem;
+  }
+  .headerTitle .info {
+    text-align: center;
+  }
+  .headerTitle .info h1 {
+    text-align: center;
+  }
+  .header .headerTitle .info .navbar {
+    display: block;
+    margin-top: -1px;
+  }
+  .header .headerTitle .info .ballonInfo {
+    top: 150px;
+    right: 50px;
+  }
+  .subMain {
+    width: 80%;
+    border-left: none;
+    margin-top: -5rem;
+  }
+  .subMain .subMainTitle {
+    position: absolute;
+    margin-top: -5rem;
+    width: 90%;
+  }
+  .unSubMain {
+    margin-left: -20px;
+  }
+  .component #modalError {
+    min-height: 100vh;
+  }
+  .component #modalError #ty {
+    width: 100%;
+  }
+  .component #modalError #ty h1 {
+    font-size: 3rem;
+  }
+  .component #modalError #ty p {
+    font-size: 15px;
+  }
+  .component #modalError #ty button {
+    margin: 1rem 0;
+    padding: 0.5rem 3rem;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .cart-icon {
+    top: 5rem;
+    left: 50%;
+  }
+  .headerTitle .info h1 {
+    font-size: 10px;
+  }
+  .header a {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,695 @@
+@import '../config/_variables.scss';
+@import '../config/fonts.scss';
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.backdropfilter {
+    position: fixed;
+    z-index: -1;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-image: url('https://portalconstrucaofacil.com/wp-content/uploads/2019/11/Lenha-para-forno-e1574894896718.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: brightness(20%);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    animation: bounce;
+    animation-duration: 1s;
+    display: flex;
+    color: $fourth-color;
+    font-family: Bebas Neue;
+    z-index: 2;
+
+    i {
+        position: absolute;
+        font-size: 2rem;
+        left: 1vw;
+        top: 0.5vw;
+        color: $fourth-color;
+        cursor: pointer;
+        z-index: 3;
+
+    }
+
+    .ballonInfo {
+        position: absolute;
+        right: 70px;
+        top: 100px;
+
+        i {
+            position: absolute;
+        }
+    }
+
+    .headerTitle {
+        width: 100%;
+
+        h3 {
+            background-color: $mainColor;
+            padding: 1vw;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .info {
+            position: fixed;
+            width: 100%;
+            text-align: start;
+            background-color: $fourth-color;
+            color: $mainColor;
+            font-family: outfit;
+            font-style: oblique;
+            font-size: 15px;
+
+            h1 {
+                margin: 0 80px;
+            }
+
+            .navbar {
+                display: none;
+                background-color: $mainColor;
+                padding: 0.6rem;
+                text-align: center;
+
+                span {
+                    color: $fourth-color;
+                    padding: 0.2rem;
+                }
+
+                span:hover {
+                    color: $terciary-color;
+                }
+
+                p {
+                    color: $fourth-color;
+                }
+            }
+        }
+    }
+
+    .cart-icon {
+        position: absolute;
+        width: 10%;
+        height: 5vh;
+        right: 1rem;
+
+        i {
+            font-size: 1.2rem;
+            cursor: pointer;
+
+            span {
+                opacity: 0;
+                background-color: $fourth-color;
+                color: $mainColor;
+                padding: 0.2rem 0.5rem;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.component {
+    #modalError {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vw;
+        display: none;
+        z-index: 10;
+
+        #ty {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            background-color: $mainColor;
+            margin: auto;
+            text-align: center;
+            display: none;
+            padding: 1.5rem;
+            border: 11px solid alice;
+
+            img {
+                border-radius: 50%;
+                border: 5px solid $fourth-color;
+            }
+
+            h1 {
+                font-size: 5rem;
+                color: $fourth-color;
+                font-family: bebas neue;
+            }
+
+            p {
+                font-size: 2rem;
+                color: $fourth-color;
+                font-family: poppins;
+            }
+
+            button {
+                padding: 1rem 3rem;
+                font-family: poppins;
+                margin: 1vw 0;
+                border: none;
+            }
+        }
+    }
+}
+
+.confirmationModal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    font-family: outfit;
+    text-align: center;
+    min-height: 100vh;
+    z-index: 5;
+
+    #closeConfirmationModal {
+        color: $mainColor;
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        font-size: 1.5rem;
+        cursor: pointer;
+
+    }
+
+    .box {
+        background-color: $fourth-color;
+        max-width: 400px;
+        padding: 1rem;
+        font-family: 'Carrois Gothic SC', sans-serif;
+        text-transform: lowercase;
+
+        .title {
+            font-size: 2rem;
+            margin: 1rem 0;
+            color: $mainColor;
+            font-weight: bold;
+            font-family: bebas neue;
+        }
+
+        .clientName {
+            margin: 1rem 0;
+
+            h1 {
+                color: $dark;
+                font-size: 1.2rem;
+            }
+
+            #clientName {
+                width: 50%;
+                background-color: $fourth-color;
+                color: rgb(49, 48, 48);
+                text-align: center;
+                border-color: $mainColor;
+                margin: 0.3rem;
+                border: none;
+                border-bottom: 1px solid $gray-dark;
+                font-family: 'Carrois Gothic SC', sans-serif;
+            }
+
+            ::placeholder {
+                color: $gray-dark;
+            }
+
+        }
+
+        .paymentMode {
+            margin: 1rem 0;
+
+            h1 {
+                font-size: 1.2rem;
+                margin: 0.3rem;
+                color: $dark;
+            }
+
+            select {
+                width: 50%;
+                text-align: center;
+                background-color: $fourth-color;
+                color: $dark;
+                font-family: outfit;
+                border: none;
+                border-bottom: 1px solid $gray-dark;
+            }
+        }
+
+        .adressInformation {
+            margin: 1rem 0;
+
+            .adress {
+                display: flex;
+
+                #number {
+                    width: 20%;
+                    background-color: $fourth-color;
+                    color: $dark;
+                    border: none;
+                    border-bottom: 1px solid $gray-dark;
+                }
+
+                #adress {
+                    width: 80%;
+                    text-align: center;
+                    background-color: $fourth-color;
+                    color: $dark;
+                    border: none;
+                    border-bottom: 1px solid $gray-dark;
+                    border-right: 1px solid $gray-dark;
+                }
+
+                ::placeholder {
+                    color: $gray-dark;
+                }
+            }
+        }
+
+        .sauceTipes {
+            margin: 1rem 0;
+        }
+
+        .order {
+            margin: 1rem 0;
+
+            button {
+                width: 50%;
+                padding: 0.5rem 0;
+                background-color: $mainColor;
+                color: $fourth-color;
+                font-family: outfit;
+                border: none;
+                margin: auto;
+                margin-top: -10px;
+            }
+
+            button:hover {
+                background-color: rgb(171, 24, 24);
+                color: $fourth-color;
+            }
+        }
+    }
+}
+
+.additionalInformation {
+    margin: 2rem 0;
+
+    textarea {
+        background-color: $fourth-color;
+        text-align: center;
+        color: #000;
+        font-family: outfit;
+    }
+
+    ::placeholder {
+        color: $gray-dark;
+    }
+}
+
+.exchangedMoney {
+    margin: 2rem 0;
+
+    #exchanged {
+        text-align: center;
+        background-color: $fourth-color;
+        color: $dark;
+        border: none;
+        border-bottom: 1px solid $gray-dark;
+    }
+
+    ::placeholder {
+        color: $gray-dark;
+        font-style: oblique;
+    }
+
+    .informative {
+        i {
+            font-size: 10px;
+            color: $mainColor;
+        }
+    }
+}
+
+.subMain {
+    .produto {
+        margin: 1rem 0;
+
+        b {
+            font-family: outfit;
+        }
+    }
+
+    span {
+        font-family: outfit;
+        font-style: oblique;
+    }
+}
+
+main,
+.subMain,
+.unSubMain {
+    position: relative;
+    padding: 6rem 1rem;
+    width: 50%;
+
+    .subMainTitle,
+    .unSubMainTitle {
+        background-color: $mainColor;
+        text-align: center;
+        border-radius: 4px;
+        padding: 0.2rem;
+
+        h1 {
+            color: $fourth-color;
+            font-size: 2rem;
+            font-family: bebas neue;
+            font-style: oblique;
+
+        }
+    }
+
+    .produto {
+        width: 100%;
+        color: $fourth-color;
+        margin: 1rem 0;
+
+        span,
+        i {
+            color: $terciary-color;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        h1 {
+            font-family: bebas neue;
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-family: outfit;
+            font-size: 1rem;
+
+            span {
+                font-family: outfit;
+            }
+
+        }
+    }
+
+    .combo {
+        display: flex;
+        font-style: oblique;
+        font-family: outfit;
+
+        span {
+            font-style: normal;
+            margin: 0 0.5vw;
+        }
+    }
+
+}
+
+.unSubMain {
+    width: 97%;
+
+    .unSubMainTitle {
+        margin-top: -5rem;
+    }
+}
+
+.cartOpen {
+    display: none;
+    font-size: 1.2rem;
+    position: fixed;
+    width: 50%;
+    transform: translateX(100%);
+    top: 0;
+    z-index: 2;
+
+    .title {
+        font-size: 2.5rem;
+        font-family: bebas neue;
+        margin: 1rem 0;
+        color: $fourth-color;
+        text-shadow: $gray-dark 3px 3px 4px;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            margin: 0 1rem;
+
+        }
+
+        span:nth-child(1) {
+            opacity: 0;
+        }
+
+        ;
+
+        span:nth-child(2) {
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+    }
+
+    .container {
+        width: 100%;
+        text-align: center;
+        float: right;
+        background-color: $dark;
+        border-radius: 0px 0px 0px 10px;
+
+        #content {
+            color: $fourth-color;
+            font-weight: 600;
+            font-family: 'Carrois Gothic SC', sans-serif;
+
+            td {
+                width: 100vw;
+            }
+        }
+
+        #removeToCart {
+            font-size: 15px;
+            padding: 0.1rem 0.5rem;
+            margin: 0 1rem;
+            color: $grayDefault;
+            background-color: transparent;
+        }
+
+        #removeToCart:hover {
+            border: 0.1px solid $fourth-color;
+        }
+
+        #finalValue {
+            font-family: 'Carrois Gothic SC', sans-serif;
+            color: $fourth-color;
+        }
+
+        button {
+            padding: 0.5rem;
+            background-color: $mainColor;
+            color: $fourth-color;
+            font-family: outfit;
+            font-weight: 600;
+            border: none;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            transition: 1s;
+        }
+
+        button:hover {
+            background-color: $fourth-color;
+            color: $mainColor;
+        }
+    }
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    color: $terciary-color;
+    width: 100%;
+    justify-content: space-between;
+
+    .socialMedia {
+        font-size: 2.5rem;
+    }
+
+    .help {
+        text-align: center;
+    }
+}
+
+.subMain {
+    width: 50%;
+    border-left: 1px solid white;
+}
+
+@media only screen and (max-width:500px) {
+    .cartOpen {
+        transform: translateX(0%);
+        width: 100%;
+
+    }
+
+    .confirmationModal {
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        background-color: $fourth-color;
+
+        .title {
+            text-align: center;
+        }
+
+        .box {
+            width: 100vw;
+            height: 100vh;
+            margin: auto;
+        }
+
+    }
+
+
+    body {
+        display: block;
+    }
+
+    main {
+        width: 80%;
+        margin-top: -1.5rem;
+
+        .produto {
+            margin: 2.5rem 0;
+        }
+    }
+
+
+    .subMain {
+        .produto {
+            margin-top: 0rem;
+        }
+
+        .unSubMain {
+            .produto {
+                margin-top: 1rem;
+            }
+
+        }
+    }
+
+    .headerTitle {
+
+        .info {
+
+            text-align: center;
+
+            h1 {
+                text-align: center;
+
+            }
+
+        }
+
+    }
+
+    .header {
+        .headerTitle {
+            .info {
+                .navbar {
+                    display: block;
+                    margin-top: -1px;
+                }
+
+                .ballonInfo {
+                    top: 150px;
+                    right: 50px;
+                }
+            }
+        }
+    }
+
+    .subMain {
+        width: 80%;
+        border-left: none;
+        margin-top: -5rem;
+
+        .subMainTitle {
+            position: absolute;
+            margin-top: -5rem;
+            width: 90%;
+        }
+    }
+
+    .unSubMain {
+        margin-left: -20px;
+    }
+
+    .component {
+
+        #modalError {
+            min-height: 100vh;
+
+            #ty {
+                width: 100%;
+
+                h1 {
+                    font-size: 3rem;
+                }
+
+                p {
+                    font-size: 15px;
+                }
+
+                button {
+                    margin: 1rem 0;
+                    padding: 0.5rem 3rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:300px) {
+    .cart-icon {
+        top: 5rem;
+        left: 50%;
+    }
+
+    .headerTitle {
+        .info {
+            h1 {
+                font-size: 10px;
+            }
+        }
+    }
+
+    .header {
+        a {
+            opacity: 0;
+        }
+    }
+
+}

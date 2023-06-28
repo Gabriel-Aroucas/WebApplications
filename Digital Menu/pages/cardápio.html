@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A melhor hambúrgueria do Brail, agora é digital !">
+    <meta name='theme-color' content='#8d1818'>
+    <meta property='og:image' content='https://i.ibb.co/fSDHZfp/Screenshot-2023-05-30-20-46-42.png'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css'
+        integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=='
+        crossorigin='anonymous' referrerpolicy='no-referrer' />
+    <script src="../js/main.js" defer></script>
+    <script src="../js/scripts.js" defer></script>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../sass/cardapio/style.css">
+    <link rel="stylesheet" href="../sass/config/reset.css">
+    <link rel="stylesheet" href="/node_modules/animate.css/animate.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../src/favIcon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../src/favIcon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../src/favIcon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/favIcon/favicon-16x16.png">
+    <link rel="manifest" href="../src/favIcon/site.webmanifest">
+    <link rel="mask-icon" href="../src/favIcon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+  
+    <title>Hambúrgueres</title>
+</head>
+
+<body>
+    <div class="backdropfilter">.</div>
+    <p id="navTop">index</p>
+    <header class="header">
+        <a href="../index.html"><i class="goBack fas fa-circle-arrow-left"></i></a>
+
+        <div class="headerTitle">
+            <h3>A melhor de São Gonçalo</h3>
+            <div class="info">
+                <div class="ballonInfo">
+                    <i class="fas fa-circle-question" onclick="news()"></i>
+                </div>
+                <nav class="navbar">
+                    <a href="#navTop"><span>Hambúrgueres</span></a>
+                    <a href="#navBebidas"><span>Bebidas</span></a>
+                    <a href="#navCombo"><span>Especiais</span></a>
+                </nav>
+            </div>
+        </div>
+        <div class="cart-icon">
+            <i class="fas fa-cart-shopping" id="cartIcon"><span id="cartCounter">1</span></i>
+        </div>
+    </header>
+    <section class="cartOpen" id="cartOpen">
+        <div class="container">
+            <div class="title"><span class="closeCart">&times;</span> Carrinho <span class="closeCart"
+                    id="closeCart">&times;</span></div>
+            <hr>
+            <div class="content">
+                <p id="content">
+                    <i id="placeholder">Seu carrinho está vazio</i>
+                </p>
+            </div>
+            <hr>
+            <div class="finish">
+                <p id="finalValue"></p>
+            </div>
+            <button type="button" class="finish" id="finish">Finalizar Pedido</button>
+        </div>
+    </section>
+    <section class="confirmationModal">
+        <div class="box">
+            <p id="closeConfirmationModal">&times;</p>
+            <h1 class="title">Informações de entrega e pagamento</h1>
+            <div class="clientName">
+                <h1>Seu primeiro nome</h1>
+                <input type="text" id="clientName" placeholder="Ex: Gabriel">
+            </div>
+            <div class="paymentMode">
+                <h1>Forma de Pagamento</h1>
+                <select name="payment" id="payment">
+                    <option class="opt" selected disabled>Selecione uma opção</option>
+                    <option class="opt">Débito 💳</option>
+                    <option class="opt">Crédito 💳</option>
+                    <option class="opt">VR 🔰</option>
+                    <option class="opt" id="money">Dinheiro 💵</option>
+                </select>
+                <div class="exchangedMoney">
+                    <h1>Precisa de troco ?</h1>
+                    <input type="text" id="exchanged" placeholder="Ex: troco para 50 reais">
+                </div>
+
+                <div class="adressInformation">
+                    <h1>Endereço da entrega</h1>
+                    <div class="adress">
+                        <input type="text" id="adress" placeholder="Ex: Estrada do pacheco">
+                        <input type="number" id="number" placeholder="ex:125">
+                    </div>
+                </div>
+
+                <div class="sauceTipes">
+                    <h1>Quais os molhos ?</h1>
+
+                    <select name="sauces" id="sauces">
+                        <option selected disabled>Selecione uma opção</option>
+                        <option>Nenhum, Obrigado.</option>
+                        <option>Billy Jack</option>
+                        <option>Barbecue</option>
+                        <option>Maionese Temperada</option>
+                    </select>
+                </div>
+                <div class="additionalInformation">
+                    <h1>Informações Adicionais</h1>
+                    <textarea id="additionalInformation" cols="30" rows="5"
+                        placeholder="Exemplo : Gostaria de por barbecue no hambúrguer 1 e billy jack no hambúrguer 2 e gostaria de retirar a salada"></textarea>
+                </div>
+                <div class="order">
+                    <button type="button" id="finishOrder"> Finalizar Pedido </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="component">
+        <div id="modalError" class="animate__animated animate__zoomIn">
+            <div id="ty">
+                <img src="/src/rei-do-burger-740x740.jpg" width="150px" height="150px" alt="logo">
+                <h1 id="DT">dinamic title</h1>
+                <p id="DD">dinamic description</p>
+                <button type="button" id="btnOkModal">Ok</button>
+            </div>
+    </section>
+    <main>
+        <div class="produto">
+            <h1>Hambúrguer Nº1</h1>
+            <p>Pão, Carne, Queijo, Molho especial, salada, cebola e azeitona
+                <span id="HB1" name="9.90" onclick="addToCart('HB1')">R$ 9,90</span>
+                <i onclick="addToCart('HB1')" class="fas fa-cart-plus"></i>
+            <div class="combo">
+                <p>Combo: </p> <span id="CB1" value="12.90" onclick="addToCart('CB1')">R$ 12,90</span>
+                <i onclick="addToCart('CB1')" class="fas fa-cart-plus"></i>
+            </div>
+            </p>
+        </div>
+
+        <div class="produto">
+            <h1>Hambúrguer Nº2</h1>
+            <p>Pão, Carne, Queijo, Molho especial, salada, cebola e azeitona
+                <span id="HB2" name="10.90" onclick="addToCart('HB2')">R$10,90</span>
+                <i onclick="addToCart('HB2')" class="fas fa-cart-plus"></i>
+            <div class="combo">
+                <p>Combo: </p> <span id="CB2" value="13.90" onclick="addToCart('CB2')">R$ 13,90</span>
+                <i onclick="addToCart('CB2')" class="fas fa-cart-plus"></i>
+            </div>
+            </p>
+        </div>
+
+        <div class="produto">
+            <h1>Hambúrguer Nº3</h1>
+            <p>Pão, Carne, Queijo, Molho especial, salada, cebola e azeitona
+                <span id="HB3" name="11.90" onclick="addToCart('HB3')">R$ 11,90</span>
+                <i onclick="addToCart('HB3')" class="fas fa-cart-plus"></i>
+            <div class="combo">
+                <p>Combo: </p> <span id="CB3" value="14.90" onclick="addToCart('CB3')">R$ 14,90</span>
+                <i onclick="addToCart('CB3')" class="fas fa-cart-plus"></i>
+            </div>
+            </p>
+        </div>
+
+        <div class="produto">
+            <h1>Hambúrguer Nº4</h1>
+            <p>Pão, Carne, Queijo, Molho especial, salada, cebola e azeitona
+                <span id="HB4" name="12.90" onclick="addToCart('HB4')">R$ 12,90</span><i onclick="addToCart('HB4')"
+                    class="fas fa-cart-plus"></i>
+            <div class="combo">
+                <p>Combo: </p> <span id="CB4" value="15.90" onclick="addToCart('CB4')">R$ 15,90</span>
+                <i onclick="addToCart('CB4')" class="fas fa-cart-plus"></i>
+            </div>
+            </p>
+        </div>
+
+        <div class="produto">
+            <h1>Hambúrguer Nº5</h1>
+            <p>Pão, Carne, Queijo, Molho especial, salada, cebola e azeitona
+                <span id="HB5" name="13.90" onclick="addToCart('HB5')">R$ 13,90</span><i onclick="addToCart('HB5')"
+                    class="fas fa-cart-plus"></i>
+            <div class="combo">
+                <p>Combo: </p> <span id="CB5" value="16.90" onclick="addToCart('CB5')">R$ 16,90</span>
+                <i onclick="addToCart('CB5')" class="fas fa-cart-plus"></i>
+            </div>
+            </p>
+        </div>
+
+        <div class="produto">
+            <h1>Hambúrguer Nº6</h1>
+            <p>Pão, Carne, Queijo, Molho especial, salada, cebola e azeitona
+                <span id="HB6" name="14.90" onclick="addToCart('HB6')">R$ 14,90</span>
+                <i onclick="addToCart('HB6')" class="fas fa-cart-plus"></i>
+            <div class="combo">
+                <p>Combo: </p> <span id="CB6" value="17.90" onclick="addToCart('CB6')">R$ 17,90</span>
+                <i onclick="addToCart('CB6')" class="fas fa-cart-plus"></i>
+            </div>
+            </p>
+        </div>
+
+        <div class="produto">
+            <h1>Hambúrguer Nº7</h1>
+            <p>Pão, Carne, Queijo, Molho especial, salada, cebola e azeitona
+                <span id="HB7" name="15.90" onclick="addToCart('HB7')">R$ 15,90</span><i onclick="addToCart('HB7')"
+                    class="fas fa-cart-plus"></i>
+            <div class="combo">
+                <p>Combo: </p> <span id="CB7" value="18.90" onclick="addToCart('CB7')">R$ 18,90</span>
+                <i onclick="addToCart('CB7')" class="fas fa-cart-plus"></i>
+            </div>
+            </p>
+        </div>
+
+        <div class="produto">
+            <h1>Hambúrguer Nº8</h1>
+            <p>Pão, Carne, Queijo, Molho especial, salada, cebola e azeitona
+                <span id="HB8" name="16.90" onclick="addToCart('HB8')">R$ 16,90</span><i onclick="addToCart('HB8')"
+                    class="fas fa-cart-plus"></i>
+            <div class="combo">
+                <p>Combo: </p> <span id="CB8" value="19.90" onclick="addToCart('CB8')">R$ 19,90</span>
+                <i onclick="addToCart('CB8')" class="fas fa-cart-plus"></i>
+            </div>
+            </p>
+        </div>
+
+        <div class="produto">
+            <h1>Hambúrguer Nº9</h1>
+            <p>Pão, Carne, Queijo, Molho especial, salada, cebola e azeitona
+                <span id="HB9" name="17.90" onclick="addToCart('HB9')">R$ 17,90</span>
+                <i onclick="addToCart('HB9')" class="fas fa-cart-plus"></i>
+            <div class="combo">
+                <p>Combo: </p> <span id="CB9" value="20.90" onclick="addToCart('CB9')">R$ 20,90</span>
+                <i onclick="addToCart('CB9')" class="fas fa-cart-plus"></i>
+            </div>
+            </p>
+        </div>
+
+        <div class="produto" id="navBebidas">
+            <h1>Hambúrguer Nº10</h1>
+            <p>Pão, Carne, Queijo, Molho especial, salada, cebola e azeitona
+                <span id="HB10" name="18.90" onclick="addToCart('HB10')">R$ 18,90</span>
+                <i onclick="addToCart('HB10')" class="fas fa-cart-plus"></i>
+            <div class="combo">
+                <p>Combo: </p> <span id="CB10" value="21.90" onclick="addToCart('CB10')">R$ 21,90</span>
+                <i onclick="addToCart('CB10')" class="fas fa-cart-plus"></i>
+            </div>
+            </p>
+        </div>
+
+        <div class="produto">
+            <h1>Hambúrguer Nº11</h1>
+            <p>Pão, Carne, Queijo, Molho especial, salada, cebola e azeitona
+                <span id="HB11" name="19.90" onclick="addToCart('HB11')">R$ 17,90</span>
+                <i onclick="addToCart('HB11')" class="fas fa-cart-plus"></i>
+            </p>
+        </div>
+
+        </div>
+        </div>
+    </main>
+
+    <!-- Refrigerantes-->
+    <section class="subMain">
+        <div class="subMainTitle">
+            <h1>Refrigerantes & sucos</h1>
+        </div>
+        <div class="produto">
+            <h1>Coca Cola 2LT </h1>
+            <span id="cocacola2lt" name="9.90" onclick="addToCart('cocacola2lt')">R$ 9,90</span>
+            <i onclick="addToCart('cocacola2lt')" class="fas fa-cart-plus"></i>
+        </div>
+        <div class="produto">
+            <h1>Fanta 2LT</h1><b>Uva, Laranja e Maracúja</b>
+            <span id="fanta2lt" name="8.90" onclick="addToCart('fanta2lt')">R$ 8,90</span>
+            <i onclick="addToCart('fanta2lt')" class="fas fa-cart-plus"></i>
+        </div>
+        <div class="produto">
+            <h1>Coca Lata 350ml</h1>
+            <span id="cocalata350" name="4.90" onclick="addToCart('cocalata350')">R$ 4,90</span>
+            <i onclick="addToCart('cocalata350')" class="fas fa-cart-plus"></i>
+        </div>
+        <div class="produto">
+            <h1>Fanta Lata 350ml</h1> <b>Uva, Laranja e Maracúja</b>
+            <span id="fantalata350" name="8.90" onclick="addToCart('fantalata350')">R$ 8,90</span>
+            <i onclick="addToCart('fantalata350')" class="fas fa-cart-plus"></i>
+        </div>
+
+        <div class="produto" id="navCombo">
+            <h1>Suco Del Valle Lata 290ml</h1> <b>Pêssego, Goiaba, Maracúja e Uva</b>
+            <span id="delvale290" name="8.90" onclick="addToCart('delvale290')">R$ 8,90</span>
+            <i onclick="addToCart('delvale290')" class="fas fa-cart-plus"></i>
+        </div>
+
+        <!--COMBOS-->
+
+        <div class="unSubMain">
+            <div class="unSubMainTitle">
+                <h1>Combos Especiais</h1>
+            </div>
+            <div class="produto">
+                <h1>Combo casal</h1> <b>2 Hambúrgueres Nº2, batata turbinada, e aneis de cebola</b>
+                <span id="combocasal" name="38.90" onclick="addToCart('combocasal')">R$ 38,90</span>
+                <i onclick="addToCart('combocasal')" class="fas fa-cart-plus"></i>
+            </div>
+            <div class="produto">
+                <h1>Churrasco</h1> <b>4 Espetinhos de carne, arroz, farofa, molho á campanha</b>
+                <span id="churrasco" name="28.90" onclick="addToCart('churrasco')">R$ 28,90</span>
+                <i onclick="addToCart('churrasco')" class="fas fa-cart-plus"></i>
+            </div>
+            <div class="produto">
+                <h1>Sonho de Menino</h1> <b>Porção de nuggets, porção de neis de cebola, batata turbinada e cheddar</b>
+                <span id="sonhodemenino" name="48.90" onclick="addToCart('sonhodemenino')">R$ 48,90</span>
+                <i onclick="addToCart('sonhodemenino')" class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

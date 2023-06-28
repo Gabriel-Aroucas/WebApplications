@@ -1,0 +1,320 @@
+@import '../config/variables';
+@import '../config/fonts.scss';
+@import '/node_modules/animate.css/animate.css';
+
+body {
+    background-image: url('https://portalconstrucaofacil.com/wp-content/uploads/2019/11/Lenha-para-forno-e1574894896718.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    backdrop-filter: brightness(20%);
+    min-height: 100vh;
+}
+
+.header {
+    animation: bounce;
+    animation-duration: 1s;
+
+    display: flex;
+    color: $fourth-color;
+    font-family: Bebas Neue;
+
+    .headerTitle {
+        width: 100%;
+
+        h3 {
+            background-color: $mainColor;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 0.5rem 0;
+
+        }
+    }
+
+    .cart-icon {
+        i {
+            font-size: 1.2rem;
+            position: absolute;
+            left: 93%;
+            cursor: pointer;
+        }
+    }
+}
+
+.main {
+    display: none;
+    font-size: 1.2rem;
+    position: fixed;
+    z-index: 3;
+    width: 50%;
+    transform: translateX(100%);
+    top: 0;
+
+    .title {
+        font-size: 1.5rem;
+        font-family: bebas neue;
+        margin: 1rem 0;
+        color: $fourth-color;
+        display: flex;
+        justify-content: space-between;
+
+
+        span {
+            margin: 0 1rem;
+
+        }
+
+        span:nth-child(1) {
+            opacity: 0;
+        }
+
+        ;
+
+        span:nth-child(2) {
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+    }
+
+    .container {
+        width: 100%;
+        text-align: center;
+        float: right;
+        background-color: $secondary-color;
+        border-radius: 0px 0px 0px 10px;
+
+        #content {
+            color: $terciary-color;
+            font-family: poppins;
+            font-weight: 600;
+
+            td {
+                width: 100vw;
+            }
+        }
+
+        #removeToCart {
+            padding: 0.1rem 0.7rem;
+            margin: 0 1rem;
+            background-color: tomato;
+        }
+
+        #finalValue {
+            font-family: Arial, Helvetica, sans-serif;
+            color: $fourth-color;
+        }
+
+        button {
+            padding: 0.5rem;
+            background-color: $terciary-color;
+            color: $fourth-color;
+            font-family: poppins;
+            font-weight: 600;
+            border: none;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            background-color: $fourth-color;
+            color: $terciary-color;
+        }
+    }
+
+
+}
+.description{
+    p:nth-child(4){
+        margin: 20px 0;
+    }
+    p:nth-child(3){
+        transform: translateY(100%);
+    }
+}
+.logo {
+    text-align: center;
+
+    img {
+        border-radius: 50%;
+        border: 5px solid $mainColor;
+        filter: brightness(85%);
+    }
+}
+
+.title,
+.buttons {
+    text-align: center;
+    color: $fourth-color;
+
+    h1 {
+        font-size: 2rem;
+        font-family: 'Koulen', cursive;
+        font-style: oblique;
+    }
+
+    span {
+        font-size: 1rem;
+        font-family: Montserrat;
+        font-weight: 600;
+    }
+}
+
+.buttons {
+    margin: 3vw auto;
+    width: 100vw;
+    color: $fourth-color;
+    font-family: poppins;
+    font-weight: 600;
+    font-size: calc(2rem + 1vw);
+
+}
+
+.hamburguers,
+.events,
+.reservas,
+.combos {
+    background-color: $secondary-color;
+    margin: 1.5vw;
+    width: 80%;
+    cursor: pointer;
+}
+
+.events,
+.combos {
+    border-radius: 8px 0px 0px 8px;
+    background: $mainColor;
+    margin-left: 100%;
+    transform: translate(-100%);
+}
+
+.hamburguers,
+.reservas {
+    margin: 0;
+    background: $mainColor;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.hamburguers:hover,
+.events:hover,
+.reservas:hover,
+.combos:hover {
+    background-color: $fourth-color;
+    color: $mainColor;
+    transition: 0.7s;
+}
+
+.footer {
+    position: fixed;
+    bottom: 4rem;
+    display: flex;
+    color: $fourth-color;
+    width: 100%;
+    justify-content: space-between;
+
+    .socialMedia {
+        font-size: 2.5rem;
+    }
+
+    .help {
+        text-align: center;
+    }
+}
+
+#modalError {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+
+    #ty {
+        position: absolute;
+        top: 5vw;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70%;
+        background-color: $mainColor;
+        margin: auto;
+        text-align: center;
+        display: none;
+
+        img {
+            border-radius: 50%;
+            border: 5px solid $fourth-color;
+        }
+
+        h1 {
+            font-size: 5rem;
+            color: $fourth-color;
+            font-family: bebas neue;
+        }
+
+        p {
+            font-size: 2rem;
+            color: $fourth-color;
+            font-family: poppins;
+        }
+
+        button {
+            padding: 1vw 3vw;
+            font-family: poppins;
+            margin: 1vw 0;
+            border: none;
+        }
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .footer {
+        display: block;
+        text-align: center;
+
+        .socialMedia {
+            font-size: 1rem;
+        }
+
+        .help {
+            display: none;
+        }
+
+        .credits {
+            font-size: 0.8rem;
+        }
+    }
+
+    #modalError {
+        height: 200vw;
+
+        #ty {
+            width: 100%;
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+            }
+
+            button {
+                padding: 0.5rem 3rem;
+                margin: 2rem 0;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width:200px) {
+    .footer {
+        display: none;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .cartOpen {
+        transform: translateX(0%);
+        width: 100%;
+    }
+}

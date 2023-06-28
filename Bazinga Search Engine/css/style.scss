@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: hsl(0%, 70%, 50%);
+}
+main{
+    height: 100vh;
+}section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+h1{
+    font-size: 10rem;
+    font-family: poppins;
+    color: #fff;
+}
+input{
+    padding: 1rem;
+    border-radius: 0px 15px 0px 15px;
+    border: none;
+    outline: none;
+    font-family: jetbrains mono;
+    width: 300px;
+}
+span{
+    font-size: 20px;
+    position: absolute;
+    transform: translate(-140%,60%);
+    cursor: pointer;
+}
+input::placeholder{
+    text-align: center;
+    font-style: oblique;
+}
+
+iframe{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+@media only screen and (max-width:700px){
+    h1{
+        font-size: 100px;
+    }
+}
+
+
+@media only screen and (max-width:405px){
+    h1{
+        font-size: 50px;
+    }
+}

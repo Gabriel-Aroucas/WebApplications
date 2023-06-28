@@ -1,0 +1,102 @@
+/*
+$bg-color:#1c1c1c;
+$destac-color:hsl(30, 70%, 50%);
+$efect-color:hsl(62, 70%, 50%);
+$text-color:aliceblue;
+$util-color:hsl(53, 70%, 69%);
+$damage:hsl(0, 70%, 30%);
+//$text-color:#FFEE63;
+*/
+/*
+$primary-color:#523906;
+$secondary-color: #535204;
+$terciary-color: #CDB30C;
+$fourth-color: aliceblue;
+*/
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gruppo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap");
+body {
+  background-image: url("https://portalconstrucaofacil.com/wp-content/uploads/2019/11/Lenha-para-forno-e1574894896718.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.background {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  -webkit-backdrop-filter: brightness(20%);
+          backdrop-filter: brightness(20%);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  animation: bounce;
+  animation-duration: 1s;
+  display: flex;
+  color: rgb(248, 248, 248);
+  font-family: Bebas Neue;
+}
+.header .headerTitle {
+  width: 100%;
+}
+.header .headerTitle h3 {
+  background-color: rgb(141, 24, 24);
+  padding: 1vw;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.header .goBack a {
+  font-size: 2rem;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+main {
+  margin: 5rem 0;
+  text-align: center;
+}
+main h1 {
+  font-size: 5rem;
+  font-family: bebas neue;
+  color: rgb(248, 248, 248);
+}
+main img {
+  border-radius: 50%;
+  border: 10px solid rgb(248, 248, 248);
+}
+main .text {
+  color: rgb(248, 248, 248);
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  text-shadow: black 5px 5px 10px;
+  font-family: outfit;
+}
+main .text a {
+  color: #CDB30C;
+}
+
+@media only screen and (max-width: 600px) {
+  .header .headerTitle h3 {
+    padding: 1rem;
+  }
+  main h1 {
+    font-size: 1.8rem;
+  }
+  main img {
+    width: 200px;
+  }
+}/*# sourceMappingURL=style.css.map */
