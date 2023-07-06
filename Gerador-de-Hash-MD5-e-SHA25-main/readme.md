@@ -10,7 +10,9 @@
     <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 </div>
-  
+
+  **Link for preview**
+  <a href="https://gerador-de-hash-md-5-e-sha-25-main.vercel.app">https://gerador-de-hash-md-5-e-sha-25-main.vercel.app</a>
   <div>
   <img src="https://i.ibb.co/jvFPZZk/Screenshot-2023-03-30-14-40-36.png"> 
   </div>
